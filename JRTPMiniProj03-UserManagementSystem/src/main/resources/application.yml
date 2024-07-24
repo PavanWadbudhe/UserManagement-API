@@ -1,0 +1,60 @@
+spring:
+   application:
+      name: JRTPMiniProj03-UserManagementSystem
+#for datasource
+   datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///jrtp701db
+      username: root
+      password: root
+# JPA hibernate properties
+   jpa:
+      show-sql: true
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+         ddl-auto: update
+   mail:
+      host: smtp.gmail.com
+      username: pavanwadbudhe1998@gmail.com
+      password: vudhhxrbqxpsdeui
+      properties:
+         mail:
+            transport:
+               protocol: smtp
+            smtp:
+               port: 587
+               auth: true
+               connectiontimeout: 10000
+               starttls:
+                  enable: true
+                  required: true
+             
+server:
+   port: 4041         
+   
+mailbody:
+   registeruser:
+      location: user_registration_body.txt 
+   recoverpwd:
+      location: recover_password_body.txt     
+# custom messages 
+usermgmt:
+   module:
+      messages:
+         registration-sub: User Registration Success
+         register-success: User is register with id value 
+         register-fail: Problen in User Registration
+         activate-user-url: http://localhost:4042/user-api/activate
+         user-activation-fail: User is not found for activation
+         user-activation-success: User is activates with new Password
+         login-fail: Invalid Credentials
+         login-success: Valid Credentials and Login successful
+         user-acc-not-active: User Account is not Active
+         updation-success: User Details are updated
+         updation-fail: User not found for updation
+         user-deletion-seccess: User is Deleted
+         user-deletion-fail: User is not found for deletion
+         statuschange-success: User status changed
+         statuschange-fail: user not found for changing the status
+         recoverpwd-sub: Mail for password recovery
+         recoverpwd-fail: User and Email is not found
